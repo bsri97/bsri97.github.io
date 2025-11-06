@@ -1,0 +1,32 @@
+#heading1{
+    color: green;
+    background-color: aqua;
+}
+.text-pink{
+    color: palevioletred;
+}
+
+.text-background-yellow{
+    background-color: bisque;
+}
+
+body{
+    background-image: url("../asset/img/download.jpeg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+h1{
+    font-size: 4.0rem;
+}
+
+.text-para{
+    font-size: 2rem;
+    text-align: justify;
+    text-align-last: right;
+    text-decoration-line: line-through;
+    text-decoration-style: wavy;
+    text-indent: 2%;
+
+}
