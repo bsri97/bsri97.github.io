@@ -1,0 +1,577 @@
+
+/* SECTIONS */
+.page-section {
+  padding-top: 5%;   
+  padding-bottom: 5%;
+  padding-left: 15%;
+}
+
+.container {
+  max-width: 1000px !important;
+}
+
+/* -------- GLOBAL TYPOGRAPHY -------- */
+
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+body {
+  background-color: #0F0E0E;
+  color: #D3D3B5;
+  font-family: "Karla", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+h1, h2 {
+  font-family: "Krona One", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: #EB292B;
+}
+
+ h3, h4 {
+  font-family: "Krona One", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: #D3D3B5;
+}
+
+/* smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* main content pushed right of sticky nav */
+.main-content {
+  margin-left: 180px; 
+}
+
+/* -------- NAV -------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.side-nav ul {
+  list-style: none; 
+  padding-left: 0px;
+  margin: 10%;
+}
+
+.side-nav li {
+  margin-bottom: 1rem; 
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+  font-family: "Krona One", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+}
+
+.side-nav a {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #EB292B;         
+  text-decoration: none;
+  margin-bottom: 1%;
+  transition: color 0.25s ease;
+}
+
+/* hover */
+.side-nav a:hover {
+  color: #D3D3B5;
+}
+
+/* hover click */
+#about:target ~ .side-nav a[href="#about"],
+#work:target  ~ .side-nav a[href="#work"],
+#art:target   ~ .side-nav a[href="#art"],
+#inspo:target ~ .side-nav a[href="#inspo"],
+#contact:target ~ .side-nav a[href="#contact"] {
+  color: #D3D3B5;
+}
+
+/* -------- MOBILE NAV BEHAVIOR -------- */
+
+
+.nav-toggle {
+  display: none;
+}
+
+/* hamburger icon */
+.nav-toggle-label {
+  display: none; 
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  /* hamburger button */
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    background: #0F0E0E;
+    border-radius: 999px;
+    z-index: 1100;
+    cursor: pointer;
+    border: 1px solid #EB292B;
+  }
+
+  /* hamburger lines */
+  .nav-toggle-label span {
+    position: relative;
+    width: 22px;
+    height: 2px;
+    background: #EB292B;
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #EB292B;
+  }
+
+  .nav-toggle-label span::before {
+    top: -6px;
+  }
+
+  .nav-toggle-label span::after {
+    top: 6px;
+  }
+
+  /* mobile nav: slide-in panel */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    max-width: 260px;
+    height: 100vh;
+    background: #0F0E0E;
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .side-nav a {
+    font-size: 1.6rem;
+  }
+
+  /* when checkbox is checked → show menu */
+  .nav-toggle:checked ~ .side-nav {
+    transform: translateX(0);
+  }
+
+  /* animate hamburger into X */
+  .nav-toggle:checked + .nav-toggle-label span {
+    background: transparent;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle:checked + .nav-toggle-label span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* full width on mobile */
+  .page-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+
+
+/* -------- ABOUT / PROFILE SECTION -------- */
+
+
+
+#about {
+  padding-left: 25%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #0F0E0E;
+  color: #D3D3B5;
+}
+
+/* image-text alignment */
+.about-inner {
+  display: flex;
+  align-items: flex-start;      /* text aligned with top of photo */
+  justify-content: flex-start;
+  margin-left: 40px;            /* distance from nav to photo */
+  gap: 32px;                    /* distance between photo and text */
+}
+
+/* portrait */
+.about-photo {
+  width: 250px;                
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* text block */
+.about-copy {
+  max-width: 500px;
+}
+
+/* body text */
+.about-copy p {
+  margin: 0;
+  font-family: "Karla", system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  #about {
+    padding-left: 5%;
+    padding-right: 5%;
+ 
+  }
+
+  .about-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 20px;
+  }
+
+  .about-photo {
+    width: 60vw;
+    max-width: 280px;
+  }
+}
+
+/* -------- WORK -------- */
+
+
+#work.page-section{
+  padding-top: 0% !important;
+  background: #0F0E0E;
+  color: #D3D3B5;
+  padding-left: 15%;
+}
+
+@media (max-width: 768px) {
+  #work.page-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* -------- ART -------- */
+
+
+
+
+#art.page-section {
+  padding-left: 22%;
+}
+
+/* Responsive full-width images */
+.art-image {
+  width: calc(100vw - 150px); 
+  max-width: 1000px; 
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  #art.page-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .art-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* -------- INTERESTS -------- */
+
+
+#inspo,
+.interests-section {
+  background-color: #0F0E0E; 
+  padding-top: 5%;
+  padding-left: 15%;
+}
+
+
+/* bootstrap Card styling override */
+.embed-card,
+.card {
+  background-color: #0F0E0E !important; 
+  color: #EB292B !important; 
+  border-radius: 14px;
+  border-color: #EB292B !important;
+  box-shadow: none !important; 
+  padding: 20px;
+}
+
+/* Override card titles/text inside */
+.embed-card h4,
+.card h4,
+.embed-card p,
+.card p {
+  color: #D3D3B5 !important;
+}
+
+
+
+/* Goodreads: horizontal scrolling grid */
+.goodreads-block {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* Hide Goodreads title */
+.goodreads-block h2.gr_title,
+.goodreads-block h2.gr_title a {
+  display: none !important;
+}
+
+
+.inspo-subtitle {
+  margin-bottom: 40px; 
+  color: #D3D3B5; 
+  font-size: 1rem;
+}
+/* goodreads container */
+.goodreads-block .gr_grid_container {
+  display: grid !important;
+  grid-auto-flow: column !important; 
+  grid-template-rows: repeat(4, auto) !important; 
+  grid-auto-columns: 80px !important; /* Width of each book block */
+  overflow-x: auto !important;
+  gap: 12px !important;
+  padding-bottom: 8px;
+  height: 450px; 
+  scrollbar-width: thin;
+}
+
+/* scrollbars for WebKit */
+.goodreads-block .gr_grid_container::-webkit-scrollbar {
+  height: 6px;
+}
+.goodreads-block .gr_grid_container::-webkit-scrollbar-track {
+  background: #D3D3B5;
+}
+.goodreads-block .gr_grid_container::-webkit-scrollbar-thumb {
+  background: #D3D3B5;
+  border-radius: 999px;
+}
+
+/* Each book */
+.goodreads-block .gr_grid_book_container {
+  width: 70px !important;
+  height: 105px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  float: none !important;
+}
+
+@media (max-width: 768px) {
+  #inspo,
+  .interests-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .goodreads-block {
+    max-width: 100%;
+  }
+}
+
+/* CONTACT */
+
+/* Contact Form Fields */
+.form-control {
+  background-color: rgba(235, 41, 43, 0.2); 
+  color: #D3D3B5; /* text color */
+  border: 1px solid #EB292B; 
+  border-radius: 10px;
+}
+
+/* Placeholder text */
+.form-control::placeholder {
+  color: #D3D3B5; 
+  opacity: 1;
+}
+
+/* focus state */
+.form-control:focus {
+  background-color: #0F0E0E;
+  border-color: #EB292B; /* your red accent */
+  box-shadow: 0 0 0 0.15rem rgba(235, 41, 43, 0.2);
+  color: #D3D3B5;
+}
+
+.contact-link {
+  list-style: none;
+  text-decoration: none;
+  color: #EB292B;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* Custom Button Style */
+.btn-primary {
+  background-color: #EB292B !important;  /* your red */
+  border-color: #EB292B !important;
+  color: #0F0E0E !important;           
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 28px;
+}
+
+/* Hover effect */
+.btn-primary:hover {
+  background-color: #D3D3B5 !important; 
+  border-color: #c71d23 !important;
+}
+
+/* Make entire section fill screen height */
+.contact-section {
+  min-height: 100vh;
+  padding-top: 5% !important;
+  padding-bottom: 5% !important;
+  padding-left: 15% !important;
+}
+
+/* LEFT IMAGE FITS VIEWPORT */
+.contact-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* RIGHT COLUMN FITS WITHIN VIEWPORT AND SCROLLS IF NEEDED */
+.contact-right {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-right: 10px; /* prevent clipping */
+}
+
+
+.embed-card {
+  background: #0F0E0E !important;
+  border-radius: 12px;
+  padding: 18px 20px;
+  border: 1px solid #EB292B;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.embed-card h4,
+.embed-card p {
+  color: #D3D3B5 !important;
+}
+
+/* Remove overflow scrolling on mobile */
+@media (max-width: 768px) {
+  .contact-image {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .contact-right {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .contact-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+
+/* ----- MOBILE LAYOUT ADJUSTMENTS ----- */
+@media (max-width: 768px) {
+
+  
+  .page-section {
+    margin-left: 0 !important;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: left;      
+  }
+
+
+  img,
+  .profile-img,
+  .art-image,
+  .embed-card iframe {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  
+  .about-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+
+  .contact-form {
+    width: 100% !important;
+  }
+
+  .side-nav {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3, h4 {
+    text-align: left !important;
+  }
+}
