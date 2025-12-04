@@ -1,5 +1,6 @@
 
 /* SECTIONS */
+
 .page-section {
   padding-top: 5%;   
   padding-bottom: 5%;
@@ -96,7 +97,7 @@ html {
 #art:target   ~ .side-nav a[href="#art"],
 #inspo:target ~ .side-nav a[href="#inspo"],
 #contact:target ~ .side-nav a[href="#contact"] {
-  color: #D3D3B5;
+  color: #EB292B;
 }
 
 /* -------- MOBILE NAV BEHAVIOR -------- */
@@ -346,7 +347,7 @@ html {
   background-color: #0F0E0E !important; 
   color: #EB292B !important; 
   border-radius: 14px;
-  border-color: #EB292B !important;
+  border-color: #EB292B!important;
   box-shadow: none !important; 
   padding: 20px;
 }
@@ -474,7 +475,7 @@ html {
 /* Hover effect */
 .btn-primary:hover {
   background-color: #D3D3B5 !important; 
-  border-color: #c71d23 !important;
+  border-color: #EB292B !important;
 }
 
 /* Make entire section fill screen height */
